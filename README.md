@@ -13,4 +13,4 @@ These are simple calculators with some of features from scientific calculator.
    HTML CSS used for GUI and designing. JavaScript for backend logic and flow control.
 
    ### 👇🏽 _Goto file_  
-[![Directory](https://img.shields.io/badge/Web-Calculator-green?style=flat-square&color=EAD41C&labelColor=black)](Calculator%20-WebBased-)
+[![Directory](https://img.shields.io/badge/Web-Calculator-green?style=flat-square&color=EAD41C&labelColor=black)](Calculator%20%20-WebBased-)
