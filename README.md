@@ -1,4 +1,4 @@
-# Calculator 🧮
+# Calculator
 
 This is a repository for **Calculator** based on different technologies.
 These are simple calculators with some of features from scientific calculator.
