@@ -8,7 +8,7 @@ These are simple calculators with some of features from scientific calculator.
 
    _Click_ 👇🏽 
 
-[![Directory](https://img.shields.io/badge/Directory-JavaCalculator-informational?style=flat-square)](Calculator/tree/main/Calculator%20%20-JavaBased-)
+[![Directory](https://img.shields.io/badge/Directory-JavaCalculator-informational?style=flat-square)](tree/main/Calculator%20%20-JavaBased-)
          
 # Web Based
    HTML CSS used for GUI and designing. JavaScript for backend logic and flow control.
