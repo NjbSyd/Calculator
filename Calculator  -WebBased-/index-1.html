@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/index.css">
+    <script src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/Evaluation.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/animation.js"></script>
+</head>
+
+<body>
+    <div class="container m-auto p-0 fg">
+        <div id="bg"></div>
+        <div class="row">
+            <div class="col">
+                <div class="navbar navbar-expand navbar-dark bg-dark shadow-lg" id="navigation">
+                    <a href="#" id="logotxt" class="navbar-brand text-light txt"><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/calc.svg" id="logo" width="0" height="0" />CALCULATOR</a>
+                    <button class="navbar-item btn btn-navbar btn-outline-light ml-auto mr-2 fade" data-toggle="modal" id="helperbtn" data-target="#help">Help</button>
+                    <button class="navbar-item btn btn-navbar btn-outline-light mr-5 fade" data-toggle="modal" id="infobtn" data-target="#info">About</button>
+                </div>
+            </div>
+        </div>
+        <div class="row m-auto p-5">
+            <div class="col-sm-12 mt-5">
+                <div class="container d-block justify-content-center" id="main" style="margin:auto;">
+                    <div class="row py-3 text-center">
+                        <div class="col-12"><input type="text" class="form-control text-right" id="output" readonly></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4"><button class="btn btn-info" id="ac" onclick="clicked('ac')">AC</button></div>
+                        <div class="col-sm-4"><button class="btn btn-info" id="closeb" onclick="clicked('closeb')" hidden>&#41;</button></div>
+                        <div class="col-sm-4"><button class="btn btn-info" id="del" onclick="clicked('del')">&larrhk;</button></div>
+                    </div>
+                    <div class="row pt-1 text-center">
+                        <div class="col-sm-3"><button class="btn btn-warning" id="sqrt" onclick="clicked('sqrt')">&radic;</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="cbrt" onclick="clicked('cbrt')">&#8731;</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="sqr" onclick="clicked('sqr')">x&sup2;</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="cb" onclick="clicked('cb')">x&sup3;</button></div>
+                    </div>
+                    <div class="row pt-1 text-center">
+                        <div class="col-sm-3"><button class="btn btn-warning" id="sin" onclick="clicked('sin')">Sin</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="cos" onclick="clicked('cos')">Cos</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="csc" onclick="clicked('csc')">Csc</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="sec" onclick="clicked('sec')">Sec</button></div>
+                    </div>
+                    <div class=" row pt-1 pb-2 text-center">
+                        <div class="col-sm-3"><button class="btn btn-warning" id="tan" onclick="clicked('tan')">Tan</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="cot" onclick="clicked('cot')">Cot</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="log" onclick="clicked('log')">Log</button></div>
+                        <div class="col-sm-3"><button class="btn btn-warning" id="ln" onclick="clicked('ln')">Ln</button></div>
+                    </div>
+                    <div class="row pt-1 text-center">
+                        <div class="col-sm-3"><button class="btn btn-primary" id="seven" onclick="clicked('7')">7</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="eight" onclick="clicked('8')">8</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="nine" onclick="clicked('9')">9</button></div>
+                        <div class="col-sm-3"><button class="btn btn-danger" id="divide" onclick="clicked('/')">&divide;</button></div>
+                    </div>
+
+                    <div class="row pt-1 text-center">
+                        <div class="col-sm-3"><button class="btn btn-primary" id="four" onclick="clicked('4')">4</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="five" onclick="clicked('5')">5</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="six" onclick="clicked('6')">6</button></div>
+                        <div class="col-sm-3"><button class="btn btn-danger" id="multiply" onclick="clicked('*')">&times;</button></div>
+                    </div>
+
+                    <div class="row pt-1 text-center">
+                        <div class="col-sm-3"><button class="btn btn-primary" id="one" onclick="clicked('1')">1</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="two" onclick="clicked('2')">2</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="three" onclick="clicked('3')">3</button></div>
+                        <div class="col-sm-3"><button class="btn btn-danger" id="minus" onclick="clicked('-')">&minus;</button></div>
+                    </div>
+
+                    <div class="row pt-1 text-center">
+                        <div class="col-sm-3"><button class="btn btn-primary" id="point" onclick="clicked('.')">&sdot;</button></div>
+                        <div class="col-sm-3"><button class="btn btn-primary" id="zero" onclick="clicked('0')">0</button></div>
+                        <div class="col-sm-3"><button class="btn btn-success" id="equal" onclick="clicked('equal')">&equals;</button></div>
+                        <div class="col-sm-3"><button class="btn btn-danger" id="plus" onclick="clicked('+')">&plus;</button></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- About button popup modal start-->
+    <div class="modal fade" id="info">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title m-auto"><strong class="h4">About US</strong></h5>
+                </div>
+                <div class="modal-body">
+                    <p>This is our <b>Web Technologies</b> Assignment No 3. It is made using <br>
+                        <span class="badge badge-primary bg-html"><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/html.svg" width="20px" height="20px">HTML</span>
+                        <span class="badge badge-primary bg-css"><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/css.svg" width="20px" height="20px">CSS</span>
+                        <span class="badge badge-primary bg-js"><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/js.svg" width="20px" height="20px">JavaScript</span>
+                        <span class="badge badge-primary bg-jq"><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/jq.svg" width="20px" height="20px">JQuery</span>
+                        <span class="badge badge-primary bg-bs"><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/bs.svg" width="20px" height="20px">Bootstrap</span>
+                        <br>
+                    </p>
+                    <strong class="h5">Group Members</strong>
+                    <br>
+                    <ul>
+                        <li>Najeeb Said<br><small>FA20-BSE-023</small></li>
+                        <li>Wajid Akbar<br><small>FA20-BSE-014</small></li>
+                        <li>Asad Waseem<br><small>FA20-BSE-153</small></li>
+                    </ul>
+                    <strong class="h5">Contact US</strong>
+                    <ul style="list-style-type: none">
+                        <li><span><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/wa.svg" width="30px" height="30px"></span>&emsp;+923439555964</li>
+                        <li><span><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/mail.png" width="30px" height="30px"></span>&emsp;tcanjb@gmail.com</li>
+                        <li><span><img src="https://cdn.jsdelivr.net/gh/NjbSyd/webtechA3@main/github.svg" width="30px" height="30px"></span>&emsp;<a class="linkNodesign" href="https://github.com/NjbSyd" target="_blank">NjbSyd</a></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About button popup modal end-->
+
+    <!-- Help button popup modal start-->
+    <div class="modal fade" id="help">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong class="modal-title m-auto">Instructions</strong>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger"><strong>Please!</strong> bear in mind the following instructions in order to use the calculator properly</div>
+                    <ol>
+                        <li>Enter an expression and then press equal to get the answer.</li>
+                        <li>To calculate Sine, Cosine, Tangent, Cotangent, Secant, Cosecant, Square root, Cube root, Press the corresponding button, then enter a number and a closing parenthesis
+                        </li>
+                        <li>Click &larrhk; to delete last one element.</li>
+                        <li>Click Ac to clear the output field.</li>
+                    </ol>
+                    <div class="alert alert-success" role="alert">
+                        <Strong>Remember!</Strong> You can also input through Keyboard. <br> Keyboard input is given below.
+                    </div>
+                    <strong class="h6">Keyboard Input</strong>
+                    <ul>
+                        <li><span class="badge badge-dark">delete</span> Clear output field.</li>
+                        <li><span class="badge badge-dark">backspace</span> Delete one last element.</li>
+                        <li><span class="badge badge-dark">enter</span> Calculate expression.</li>
+                        <li><span class="badge badge-dark">numpad</span>Numbers and operators input.</li>
+                        <li><span class="badge badge-dark">top row</span>Numbers input</li>
+                        <li><span class="badge badge-dark">dot key</span>Point input</li>
+                    </ul>
+                    <br>
+                    <button class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Help button popup modal end-->
+</body>
+
+</html>
